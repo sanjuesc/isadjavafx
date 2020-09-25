@@ -6,9 +6,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-import java.util.List;
-import java.util.Map;
-
 
 public class ComboBoxExperiments extends Application  {
 
