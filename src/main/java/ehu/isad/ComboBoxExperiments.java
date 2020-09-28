@@ -6,6 +6,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+
 
 public class ComboBoxExperiments extends Application  {
 
@@ -16,14 +22,18 @@ public class ComboBoxExperiments extends Application  {
 
         ComboBox comboBox = new ComboBox();
 
-        comboBox.getItems().add("Choice 1");
-        comboBox.getItems().add("Choice 2");
-        comboBox.getItems().add("Choice 3");
+        comboBox.getItems().add("BTC");
+        comboBox.getItems().add("ETH");
+        comboBox.getItems().add("LTC");
 
         comboBox.setEditable(true);
 
         comboBox.setOnAction(e -> {
-            System.out.println( comboBox.getValue());
+            try {
+                System.out.println(getPrice((String)comboBox.getValue()));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         });
 
         HBox hbox = new HBox(comboBox);
@@ -32,6 +42,18 @@ public class ComboBoxExperiments extends Application  {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+    }
+
+    public float getPrice(String txanpon) throws IOException {
+        URL coinmarket = new URL("https://api.gdax.com/products/"+txanpon + "-eur/ticker");
+        URLConnection yc= coinmarket.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+        Gson gson = new Gson();
+        Txanpona txanpona = gson.fromJson(in.readLine(), Txanpona.class);
+        in.close();
+
+        float emaitza = 0;
+        return emaitza;
     }
 
     public static void main(String[] args) {

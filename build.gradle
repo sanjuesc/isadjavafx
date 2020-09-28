@@ -34,6 +34,11 @@ repositories {
 
 def newArgs = [ '--add-exports','java.desktop/com.apple.eawt=ALL-UNNAMED',]
 
+dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
 run {
     inputs.property('moduleName', moduleName)
     doFirst {
