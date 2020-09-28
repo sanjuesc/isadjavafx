@@ -4,9 +4,8 @@ import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
@@ -19,7 +18,7 @@ import java.net.URLConnection;
 public class ComboBoxExperiments extends Application  {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
 
         primaryStage.setTitle("ComboBox Experiment 1");
 
@@ -27,22 +26,23 @@ public class ComboBoxExperiments extends Application  {
         comboBox.getItems().add("BTC");
         comboBox.getItems().add("ETH");
         comboBox.getItems().add("LTC");
-
+        Label label = new Label();
         comboBox.setEditable(false);
 
         comboBox.setOnAction(e -> {
             try {
                 float price = getPrice((String)comboBox.getValue());
-                Text prezioa = new Text(String.valueOf(price));
-                HBox hbox1 = new HBox(prezioa);
+                label.setText(String.valueOf(price));
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
         });
 
-        HBox hbox = new HBox(comboBox);
+        GridPane gridPane = new GridPane();
+        gridPane.add(comboBox,0,0);
+        gridPane.add(label,0,1);
+        Scene scene = new Scene(gridPane, 200, 120);
 
-        Scene scene = new Scene(hbox, 200, 120);
         primaryStage.setScene(scene);
 
         primaryStage.show();
@@ -57,9 +57,8 @@ public class ComboBoxExperiments extends Application  {
         Txanpona txanpona = gson.fromJson(in.readLine(), Txanpona.class);
         in.close();
 
-
-        float emaitza = txanpona.price;
-        return emaitza;
+        //System.out.println(emaitza);
+        return txanpona.price;
     }
 
     public static void main(String[] args) {
