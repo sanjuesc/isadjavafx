@@ -1,9 +1,12 @@
 package ehu.isad;
 
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
@@ -21,16 +24,17 @@ public class ComboBoxExperiments extends Application  {
         primaryStage.setTitle("ComboBox Experiment 1");
 
         ComboBox comboBox = new ComboBox();
-
         comboBox.getItems().add("BTC");
         comboBox.getItems().add("ETH");
         comboBox.getItems().add("LTC");
 
-        comboBox.setEditable(true);
+        comboBox.setEditable(false);
 
         comboBox.setOnAction(e -> {
             try {
-                System.out.println(getPrice((String)comboBox.getValue()));
+                float price = getPrice((String)comboBox.getValue());
+                Text prezioa = new Text(String.valueOf(price));
+                HBox hbox1 = new HBox(prezioa);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -40,6 +44,7 @@ public class ComboBoxExperiments extends Application  {
 
         Scene scene = new Scene(hbox, 200, 120);
         primaryStage.setScene(scene);
+
         primaryStage.show();
 
     }
@@ -52,7 +57,8 @@ public class ComboBoxExperiments extends Application  {
         Txanpona txanpona = gson.fromJson(in.readLine(), Txanpona.class);
         in.close();
 
-        float emaitza = 0;
+
+        float emaitza = txanpona.price;
         return emaitza;
     }
 
