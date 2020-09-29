@@ -5,7 +5,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
@@ -38,13 +38,9 @@ public class ComboBoxExperiments extends Application  {
             }
         });
 
-        GridPane gridPane = new GridPane();
-        gridPane.add(comboBox,0,0);
-        gridPane.add(label,0,1);
-        Scene scene = new Scene(gridPane, 200, 120);
-
+        VBox vbox = new VBox(label,comboBox);
+        Scene scene = new Scene(vbox, 400, 120);
         primaryStage.setScene(scene);
-
         primaryStage.show();
 
     }
@@ -57,7 +53,6 @@ public class ComboBoxExperiments extends Application  {
         Txanpona txanpona = gson.fromJson(in.readLine(), Txanpona.class);
         in.close();
 
-        //System.out.println(emaitza);
         return txanpona.price;
     }
 
