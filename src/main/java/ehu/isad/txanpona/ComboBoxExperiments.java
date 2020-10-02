@@ -1,4 +1,4 @@
-package ehu.isad;
+package ehu.isad.txanpona;
 
 import com.google.gson.Gson;
 import javafx.application.Application;
