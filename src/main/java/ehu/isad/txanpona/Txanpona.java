@@ -28,8 +28,6 @@ public class Txanpona {
                 ", volume=" + volume +
                 '}';
     }
-    
-
 
 
 }
