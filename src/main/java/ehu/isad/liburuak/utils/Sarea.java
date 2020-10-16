@@ -12,7 +12,6 @@ public class Sarea {
 
     public static Book URLlortu(String s) throws Exception {
             java.net.URL oracle = new java.net.URL("https://openlibrary.org/api/books?bibkeys="+s+"&jscmd=details&format=json");
-            //System.out.println("https://openlibrary.org/api/books?bibkeys="+s+"&jscmd=details&format=json");
 
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(oracle.openStream()));
@@ -21,7 +20,6 @@ public class Sarea {
             in.close();
 
             String[] zatiak = inputLine.split("\""+s+"\": ");
-            System.out.println(zatiak[1].substring(0, zatiak[1].length()-1));
             Gson gson = new Gson();
             Book emaitza =  gson.fromJson(zatiak[1].substring(0, zatiak[1].length()-1),  Book.class);
 
