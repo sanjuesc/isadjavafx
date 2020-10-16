@@ -26,13 +26,8 @@ public class Book {
         return isbn;
     }
 
-    public String getArgitaretxea(){return details.getArgitaretxea();}
-
-    public String getOrriak(){return String.valueOf(details.number_of_pages);}
-
-    public String getIrudiURl() {return thumbnail_url;}
-
-    public String getTitle(){
-        return title;
+    public Details getDetails(){
+        return details;
     }
+
 }

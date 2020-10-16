@@ -19,4 +19,12 @@ public class Details {
     public String getArgitaretxea() {
         return publishers[0];
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getPages(){
+        return number_of_pages;
+    }
 }

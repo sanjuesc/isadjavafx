@@ -50,10 +50,10 @@ public class XehetasunakKud {
 
     public Book getLib(String s) throws Exception {
         String info = sarea.URLlortu(s);
-        System.out.println(info);
+        String[] zatiak = info.split("\""+s+"\": ");
+        System.out.println(zatiak[1].substring(0, zatiak[1].length()-1));
         Gson gson = new Gson();
-        Book emaitza =  gson.fromJson(info,  Book.class);
-        System.out.println(emaitza.toString());
+        Book emaitza =  gson.fromJson(zatiak[1].substring(0, zatiak[1].length()-1),  Book.class);
 
         return emaitza;
     }
@@ -61,9 +61,10 @@ public class XehetasunakKud {
     public void egin(Book b) throws Exception {
         String isbn = b.getISBN();
         book = this.getLib(isbn);
-        izenburuText.setText(book.getTitle());
-        argitalText.setText(book.getArgitaretxea());
-        orriKopText.setText(book.getOrriak());
+        Details details = book.getDetails();
+        izenburuText.setText(details.getTitle());
+        argitalText.setText(details.getArgitaretxea());
+        orriKopText.setText(String.valueOf(details.getPages()));
         //String url = liburua.getIrudiURl();
         //Image i = createImage(url);
         //irudiaField.setImage(i);
