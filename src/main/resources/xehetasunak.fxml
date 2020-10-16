@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -23,6 +24,7 @@
             <Text fx:id="argitalText" layoutX="238.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="orriKopText" layoutX="238.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="butAtzEg" layoutX="292.0" layoutY="294.0" mnemonicParsing="false" onAction="#atzeraEgin" text="Atzera Egin" />
          </children>
     </AnchorPane>
   </children>

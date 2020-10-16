@@ -27,6 +27,7 @@ public class liburuak {
 
     @FXML
     void sacatu(ActionEvent event) {
+        mainApp.setLib(comboBox.getValue().toString());
         mainApp.xeheErakutsi();
     }
 
