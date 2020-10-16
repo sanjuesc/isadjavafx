@@ -31,4 +31,6 @@ public class Book {
     public String getOrriak(){return String.valueOf(details.number_of_pages);}
 
     public String getIrudiURl() {return thumbnail_url;}
+
+    public String getTitle() {return title; }
 }

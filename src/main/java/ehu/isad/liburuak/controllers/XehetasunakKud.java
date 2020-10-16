@@ -3,7 +3,7 @@ package ehu.isad.liburuak.controllers;
 import com.google.gson.Gson;
 import ehu.isad.liburuak.Book;
 import ehu.isad.liburuak.Liburuak;
-import ehu.isad.liburuak.utils.sarea;
+import ehu.isad.liburuak.utils.Sarea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -47,9 +47,7 @@ public class XehetasunakKud {
     }
 
     public Book getLib(String s) throws Exception {
-        Book emaitza = new Book("",""); //No sé usar el json
-        String info = sarea.URLlortu(s);
-        emaitza = (Book) gson.toJson(s, Book.class);
+        Book emaitza =  (Book) gson.fromJson(s, Book.class);
         return emaitza;
     }
 
