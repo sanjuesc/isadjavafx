@@ -2,8 +2,10 @@ package ehu.isad.liburuak.controllers;
 
 import com.google.gson.Gson;
 import ehu.isad.liburuak.Book;
+import ehu.isad.liburuak.Details;
 import ehu.isad.liburuak.Liburuak;
 import ehu.isad.liburuak.utils.sarea;
+import ehu.isad.txanpona.Txanpona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,7 +22,7 @@ public class XehetasunakKud {
 
     private Liburuak mainApp;
     private Gson gson;
-    private Book liburua = new Book("","");
+    private Book book;
 
     @FXML
     private Text izenburuText;
@@ -47,21 +49,24 @@ public class XehetasunakKud {
     }
 
     public Book getLib(String s) throws Exception {
-        Book emaitza = new Book("",""); //No sé usar el json
         String info = sarea.URLlortu(s);
-        emaitza = (Book) gson.toJson(s, Book.class);
+        System.out.println(info);
+        Gson gson = new Gson();
+        Book emaitza =  gson.fromJson(info,  Book.class);
+        System.out.println(emaitza.toString());
+
         return emaitza;
     }
 
     public void egin(Book b) throws Exception {
         String isbn = b.getISBN();
-        liburua = this.getLib(isbn);
-        izenburuText.setText(liburua.toString());
-        argitalText.setText(liburua.getArgitaretxea());
-        orriKopText.setText(liburua.getOrriak());
-        String url = liburua.getIrudiURl();
-        Image i = createImage(url);
-        irudiaField.setImage(i);
+        book = this.getLib(isbn);
+        izenburuText.setText(book.getTitle());
+        argitalText.setText(book.getArgitaretxea());
+        orriKopText.setText(book.getOrriak());
+        //String url = liburua.getIrudiURl();
+        //Image i = createImage(url);
+        //irudiaField.setImage(i);
     }
 
     private Image createImage(String url) throws IOException {
