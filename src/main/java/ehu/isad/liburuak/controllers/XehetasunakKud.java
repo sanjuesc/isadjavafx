@@ -47,7 +47,7 @@ public class XehetasunakKud {
     }
 
     public Book getLib(String s) throws Exception {
-        Book emaitza; //No sé usar el json
+        Book emaitza = new Book("",""); //No sé usar el json
         String info = sarea.URLlortu(s);
         emaitza = (Book) gson.toJson(s, Book.class);
         return emaitza;

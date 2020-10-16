@@ -26,7 +26,7 @@ public class LiburuKud {
 
 
     @FXML
-    void sacatu(ActionEvent event) {
+    void sacatu(ActionEvent event) throws Exception {
         mainApp.xeheErakutsi((Book) comboBox.getValue());
     }
 

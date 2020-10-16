@@ -11,12 +11,13 @@ public class sarea {
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(oracle.openStream()));
 
-            String inputLine;
-
-            while ((inputLine = in.readLine()) != null)
+            String inputLine=in.readLine();
+        /*
+        while ((inputLine = in.readLine()) != null)
                 System.out.println(inputLine);
+
+         */
             in.close();
-            System.out.println(inputLine);
             return inputLine;
 
 
