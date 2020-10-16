@@ -17,7 +17,8 @@ public class Book {
         this.title = title;
     }
 
-    public String getTitle() {
+    @Override
+    public String toString() {
         return title;
     }
 
@@ -30,17 +31,4 @@ public class Book {
     public String getOrriak(){return String.valueOf(details.number_of_pages);}
 
     public String getIrudiURl() {return thumbnail_url;}
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "isbn='" + isbn + '\'' +
-                ", title='" + title + '\'' +
-                ", info_url='" + info_url + '\'' +
-                ", bib_key='" + bib_key + '\'' +
-                ", preview_url='" + preview_url + '\'' +
-                ", thumbnail_url='" + thumbnail_url + '\'' +
-                ", details=" + details +
-                '}';
-    }
 }

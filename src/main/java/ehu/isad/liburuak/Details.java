@@ -16,5 +16,7 @@ public class Details {
                 '}';
     }
 
-    public String getArgitaretxea(){return publishers[0];}
+    public String getArgitaretxea() {
+        return publishers[0];
+    }
 }
