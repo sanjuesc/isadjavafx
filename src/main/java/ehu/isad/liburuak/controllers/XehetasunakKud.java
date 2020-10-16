@@ -50,8 +50,6 @@ public class XehetasunakKud {
 
     public Book getLib(String s) throws Exception {
         Book emaitza = sarea.URLlortu(s);
-
-
         return emaitza;
     }
 
