@@ -22,6 +22,9 @@ public class Liburuak extends Application {
 
     private Book lib;
 
+    private Scene libKudScene ; // Liburua aukeratzeko Scene
+    private Scene xeheScene ; // Xehetasunak ikusteko Scene
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,8 +32,11 @@ public class Liburuak extends Application {
         stage = primaryStage;
         pantailakKargatu();
 
+        libKudScene = new Scene(liburuUI,600,400);
+        xeheScene = new Scene(xeheUI,600,400);
+
         stage.setTitle("Liburuak ariketa");
-        stage.setScene(new Scene(liburuUI, 600, 400));
+        stage.setScene(libKudScene);
         stage.show();
     }
 
@@ -53,18 +59,15 @@ public class Liburuak extends Application {
     }
 
     public void liburuErakutsi() {
-        stage.setScene(new Scene(liburuUI));
+        stage.setScene(libKudScene);
         stage.show();
     }
 
     public void xeheErakutsi(Book b ) throws Exception {
         xehetasunak.egin(b);
-        stage.setScene(new Scene(xeheUI));
+        stage.setScene(xeheScene);
         stage.show();
     }
-
-    public void setLib(Book b){
-        lib = b;
-    }
-
 }
+
+

@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import ehu.isad.liburuak.Book;
 import ehu.isad.liburuak.Details;
 import ehu.isad.liburuak.Liburuak;
-import ehu.isad.liburuak.utils.sarea;
+import ehu.isad.liburuak.utils.Sarea;
 import ehu.isad.txanpona.Txanpona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,11 +49,8 @@ public class XehetasunakKud {
     }
 
     public Book getLib(String s) throws Exception {
-        String info = sarea.URLlortu(s);
-        String[] zatiak = info.split("\""+s+"\": ");
-        System.out.println(zatiak[1].substring(0, zatiak[1].length()-1));
-        Gson gson = new Gson();
-        Book emaitza =  gson.fromJson(zatiak[1].substring(0, zatiak[1].length()-1),  Book.class);
+        Book emaitza = Sarea.URLlortu(s);
+
 
         return emaitza;
     }

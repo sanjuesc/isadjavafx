@@ -1,12 +1,16 @@
 package ehu.isad.liburuak.utils;
+import com.google.gson.Gson;
+import ehu.isad.liburuak.Book;
+
 import java.net.*;
 import java.io.*;
 
-public class sarea {
+public class Sarea {
+
+    private static Gson gson;
 
 
-
-    public static String URLlortu(String s) throws Exception {
+    public static Book URLlortu(String s) throws Exception {
             java.net.URL oracle = new java.net.URL("https://openlibrary.org/api/books?bibkeys="+s+"&jscmd=details&format=json");
             //System.out.println("https://openlibrary.org/api/books?bibkeys="+s+"&jscmd=details&format=json");
 
@@ -15,7 +19,13 @@ public class sarea {
 
             String inputLine=in.readLine();
             in.close();
-            return inputLine;
+
+            String[] zatiak = inputLine.split("\""+s+"\": ");
+            System.out.println(zatiak[1].substring(0, zatiak[1].length()-1));
+            Gson gson = new Gson();
+            Book emaitza =  gson.fromJson(zatiak[1].substring(0, zatiak[1].length()-1),  Book.class);
+
+            return emaitza;
 
 
         }
