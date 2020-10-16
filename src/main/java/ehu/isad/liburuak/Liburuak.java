@@ -20,7 +20,7 @@ public class Liburuak extends Application {
     private ehu.isad.liburuak.controllers.liburuak liburuak;
     private ehu.isad.liburuak.controllers.xehetasunak xehetasunak;
 
-    private String lib;
+    private Book lib;
 
 
     @Override
@@ -34,7 +34,7 @@ public class Liburuak extends Application {
         stage.show();
     }
 
-    private void pantailakKargatu() throws IOException {
+    private void pantailakKargatu() throws Exception {
 
         FXMLLoader loaderliburu = new FXMLLoader(getClass().getResource("/liburuak.fxml"));
         liburuUI = (Parent) loaderliburu.load();
@@ -44,7 +44,7 @@ public class Liburuak extends Application {
         FXMLLoader loaderxehe = new FXMLLoader(getClass().getResource("/xehetasunak.fxml"));
         xeheUI = (Parent) loaderxehe.load();
         xehetasunak = loaderxehe.getController();
-        xehetasunak.setMainApp(this,lib);
+        xehetasunak.setMainApp(this);
     }
 
 
@@ -57,12 +57,14 @@ public class Liburuak extends Application {
         stage.show();
     }
 
-    public void xeheErakutsi() {
+    public void xeheErakutsi(Book b ) throws Exception {
+        xehetasunak.egin(b);
         stage.setScene(new Scene(xeheUI));
         stage.show();
     }
 
-    public void setLib(String s){
-        lib = s;
+    public void setLib(Book b){
+        lib = b;
     }
+
 }

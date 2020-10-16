@@ -27,4 +27,8 @@ public class Book {
     }
 
     public String getArgitaretxea(){return details.getArgitaretxea();}
+
+    public String getOrriak(){return String.valueOf(details.number_of_pages);}
+
+    public String getIrudiURl() {return thumbnail_url;}
 }

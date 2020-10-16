@@ -23,8 +23,8 @@
             <Text fx:id="izenburuText" layoutX="238.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="argitalText" layoutX="238.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="orriKopText" layoutX="238.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="butAtzEg" layoutX="292.0" layoutY="294.0" mnemonicParsing="false" onAction="#atzeraEgin" text="Atzera Egin" />
+            <ImageView fx:id="irudiaField" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="butAtzEg" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#atzeraEgin" text="Atzera Egin" />
          </children>
     </AnchorPane>
   </children>

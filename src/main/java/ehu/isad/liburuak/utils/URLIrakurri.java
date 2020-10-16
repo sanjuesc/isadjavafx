@@ -2,10 +2,12 @@ package ehu.isad.liburuak.utils;
 import java.net.*;
 import java.io.*;
 
-public class URL {
+public class URLIrakurri {
 
-        public static String URLlortu(String s) throws Exception {
-            java.net.URL oracle = new java.net.URL("https://api.gdax.com/products/"+s+"-eur/ticker");
+
+
+    public static String URLlortu(String s) throws Exception {
+            java.net.URL oracle = new java.net.URL("https://openlibrary.org/api/books?bibkeys="+s+"&jscmd=details&format=json");
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(oracle.openStream()));
 
@@ -14,7 +16,7 @@ public class URL {
             while ((inputLine = in.readLine()) != null)
                 System.out.println(inputLine);
             in.close();
-
+            System.out.println(inputLine);
             return inputLine;
 
 
