@@ -1,13 +1,13 @@
 package ehu.isad.liburuak;
 
 
+import ehu.isad.liburuak.controllers.LiburuKud;
+import ehu.isad.liburuak.controllers.XehetasunakKud;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class Liburuak extends Application {
 
@@ -17,8 +17,8 @@ public class Liburuak extends Application {
 
     private Stage stage;
 
-    private ehu.isad.liburuak.controllers.liburuak liburuak;
-    private ehu.isad.liburuak.controllers.xehetasunak xehetasunak;
+    private LiburuKud liburuak;
+    private XehetasunakKud xehetasunak;
 
     private Book lib;
 
@@ -36,12 +36,12 @@ public class Liburuak extends Application {
 
     private void pantailakKargatu() throws Exception {
 
-        FXMLLoader loaderliburu = new FXMLLoader(getClass().getResource("/liburuak.fxml"));
+        FXMLLoader loaderliburu = new FXMLLoader(getClass().getResource("/Liburuak.fxml"));
         liburuUI = (Parent) loaderliburu.load();
         liburuak = loaderliburu.getController();
         liburuak.setMainApp(this);
 
-        FXMLLoader loaderxehe = new FXMLLoader(getClass().getResource("/xehetasunak.fxml"));
+        FXMLLoader loaderxehe = new FXMLLoader(getClass().getResource("/Xehetasunak.fxml"));
         xeheUI = (Parent) loaderxehe.load();
         xehetasunak = loaderxehe.getController();
         xehetasunak.setMainApp(this);
