@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.util.StringConverter;
 
 public class LiburuKud {
 
@@ -40,7 +41,27 @@ public class LiburuKud {
                 new Book("9781491906187", "Data Algorithms")
         );
         comboBox.setItems(books);
-
+        izenak();
     }
 
+    private void izenak(){
+        comboBox.setConverter(new StringConverter() {
+            @Override
+            public String toString(Object object) {
+                if(object==null){
+                    return null;
+                }
+                else{
+                    Book b = (Book) object;
+                    return b.getTitle();
+                }
+            }
+
+            @Override
+            public Object fromString(String string) {
+                return null;
+            }
+        });
+
+    }
 }
