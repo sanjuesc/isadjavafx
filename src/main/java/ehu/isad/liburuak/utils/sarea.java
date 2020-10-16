@@ -5,7 +5,7 @@ import ehu.isad.liburuak.Book;
 import java.net.*;
 import java.io.*;
 
-public class Sarea {
+public class sarea {
 
     private static Gson gson;
 
