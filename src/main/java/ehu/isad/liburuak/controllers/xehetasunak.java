@@ -35,11 +35,12 @@ public class xehetasunak {
         mainApp = liburuak;
         liburua = getLib(s);
         izenburuText.setText(liburua.toString());
-        argitalText.setText();
+        argitalText.setText(liburua.getArgitaretxea());
     }
 
     public Book getLib(String s){
         Book emaitza; //No sé usar el json
+        String info =
         emaitza = (Book) gson.toJson(s, Book.class);
         return emaitza;
     }

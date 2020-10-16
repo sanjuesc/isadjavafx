@@ -1,5 +1,7 @@
 package ehu.isad.liburuak;
 
+import ehu.isad.liburuak.Details;
+
 public class Book {
     String isbn;
     String title;
@@ -23,4 +25,6 @@ public class Book {
     public String getISBN(){
         return isbn;
     }
+
+    public String getArgitaretxea(){return details.getArgitaretxea();}
 }
