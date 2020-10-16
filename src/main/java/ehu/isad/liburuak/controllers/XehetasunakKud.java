@@ -4,8 +4,7 @@ import com.google.gson.Gson;
 import ehu.isad.liburuak.Book;
 import ehu.isad.liburuak.Details;
 import ehu.isad.liburuak.Liburuak;
-import ehu.isad.liburuak.utils.sarea;
-import ehu.isad.txanpona.Txanpona;
+import ehu.isad.liburuak.utils.Sarea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -49,7 +48,7 @@ public class XehetasunakKud {
     }
 
     public Book getLib(String s) throws Exception {
-        Book emaitza = sarea.URLlortu(s);
+        Book emaitza = Sarea.URLlortu(s);
         return emaitza;
     }
 
