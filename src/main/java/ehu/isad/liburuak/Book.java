@@ -30,4 +30,10 @@ public class Book {
         return details;
     }
 
+    public String getThumbnail_url(){
+        return thumbnail_url;
+    }
+
+
+
 }

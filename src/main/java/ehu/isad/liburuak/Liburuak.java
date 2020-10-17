@@ -32,8 +32,8 @@ public class Liburuak extends Application {
         stage = primaryStage;
         pantailakKargatu();
 
-        libKudScene = new Scene(liburuUI,600,400);
-        xeheScene = new Scene(xeheUI,600,400);
+        libKudScene = new Scene(liburuUI,600,500);
+        xeheScene = new Scene(xeheUI,600,500);
 
         stage.setTitle("Liburuak ariketa");
         stage.setScene(libKudScene);
@@ -56,6 +56,7 @@ public class Liburuak extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
     }
 
     public void liburuErakutsi() {

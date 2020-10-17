@@ -59,9 +59,9 @@ public class XehetasunakKud {
         izenburuText.setText(details.getTitle());
         argitalText.setText(details.getArgitaretxea());
         orriKopText.setText(String.valueOf(details.getPages()));
-        //String url = liburua.getIrudiURl();
-        //Image i = createImage(url);
-        //irudiaField.setImage(i);
+        String url = book.getThumbnail_url().replace("S", "L");
+        Image i = createImage(url);
+        irudiaField.setImage(i);
     }
 
     private Image createImage(String url) throws IOException {
