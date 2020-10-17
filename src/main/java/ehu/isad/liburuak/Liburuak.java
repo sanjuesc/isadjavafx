@@ -54,9 +54,8 @@ public class Liburuak extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  //Jon Ander Asua, Ena Verhorst eta Ander San Juan
         launch(args);
-
     }
 
     public void liburuErakutsi() {
